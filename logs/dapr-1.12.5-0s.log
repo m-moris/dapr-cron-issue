@@ -1,0 +1,102 @@
+docker-compose -f docker-compose.yaml up
+ Container dapr-cron-issue-placement-1  Created
+ Container dapr-cron-issue-cron-issue-sample-1  Recreate
+ Container dapr-cron-issue-cron-issue-sample-1  Recreated
+ Container dapr-cron-issue-daprd-1  Recreate
+ Container dapr-cron-issue-daprd-1  Recreated
+Attaching to cron-issue-sample-1, daprd-1, placement-1
+cron-issue-sample-1  | 2024-06-20T07:57:00.405Z	INFO	main/main.go:71	sleep duration	{"ZZZ_SLEEP": "0s"}
+cron-issue-sample-1  | 2024-06-20T07:57:00.405Z	INFO	main/main.go:26	starting applicaton	{"sleep": "0s"}
+cron-issue-sample-1  | 2024-06-20T07:57:00.405Z	INFO	main/main.go:31	creating dapr service
+cron-issue-sample-1  | 2024-06-20T07:57:00.405Z	INFO	main/main.go:43	add cron binding handler	{"name": "h2-biding"}
+cron-issue-sample-1  | 2024-06-20T07:57:00.405Z	INFO	main/main.go:43	add cron binding handler	{"name": "h1-binding"}
+cron-issue-sample-1  | 2024-06-20T07:57:00.406Z	INFO	main/main.go:57	starting dapr service
+placement-1          | time="2024-06-20T07:57:00.487795972Z" level=info msg="Starting Dapr Placement Service -- version 1.12.5 -- commit 229d158e9f2a49f7428507361353f4db012bfb6f" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.487886023Z" level=info msg="Log level set to: debug" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.488238206Z" level=warning msg="mTLS is disabled. Skipping certificate request and tls validation" instance=defc20ee8333 scope=dapr.runtime.security type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.488456703Z" level=info msg="metrics server started on :9090/" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.488673394Z" level=info msg="Healthz server is listening on :8080" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.489053879Z" level=info msg="starting placement service started on port 50005" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.489258318Z" level=debug msg="initial configuration,index=1,servers=" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.489304064Z" level=info msg="Raft server is starting on 127.0.0.1:8201..." instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:00.489367041Z" level=debug msg="entering follower state,follower=Node at 127.0.0.1:8201 [Follower],leader-address=,leader-id=" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.539836407Z" level=info msg="Starting Dapr Runtime -- version 1.12.5 -- commit 229d158e9f2a49f7428507361353f4db012bfb6f" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.539875489Z" level=info msg="Log level set to: info" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.540186076Z" level=warning msg="mTLS is disabled. Skipping certificate request and tls validation" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.security type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.540801305Z" level=info msg="loading default configuration" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.541550156Z" level=info msg="standalone mode configured" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.541615381Z" level=info msg="app id: moris-cron-sample" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.541564814Z" level=info msg="metrics server started on :9090/" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.54167856Z" level=info msg="Dapr trace sampler initialized: DaprTraceSampler(P=0.000100)" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.541912104Z" level=info msg="local service entry announced: moris-cron-sample -> 172.18.0.2:48181" app_id=moris-cron-sample component="mdns (nameResolution/v1)" instance=44e7173f93fd scope=dapr.contrib type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.541946057Z" level=info msg="Initialized name resolution to mdns" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.542024719Z" level=info msg="Loading components…" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.542936075Z" level=info msg="successful init for input binding (h1-binding (bindings.cron/v1))" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.processor.binding type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.542983773Z" level=info msg="Component loaded: h1-binding (bindings.cron/v1)" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543010242Z" level=info msg="successful init for input binding (h2-binding (bindings.cron/v1))" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.processor.binding type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543016603Z" level=info msg="Component loaded: h2-binding (bindings.cron/v1)" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.54302323Z" level=info msg="Waiting for all outstanding components to be processed…" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.54302851Z" level=info msg="All outstanding components processed" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543046808Z" level=info msg="Loading endpoints…" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543159843Z" level=info msg="Waiting for all outstanding http endpoints to be processed…" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543193155Z" level=info msg="All outstanding http endpoints processed" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543495851Z" level=info msg="gRPC server listening on TCP address: :50001" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.api type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543521661Z" level=info msg="Enabled gRPC tracing middleware" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.api type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543527082Z" level=info msg="Enabled gRPC metrics middleware" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.api type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543576194Z" level=info msg="Registering workflow engine for gRPC endpoint: [::]:50001" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.api type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543624921Z" level=info msg="API gRPC server is running on port 50001" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543696679Z" level=info msg="Enabled max body size HTTP middleware with size 4 MB" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.http type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543723415Z" level=info msg="Enabled tracing HTTP middleware" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.http type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543730172Z" level=info msg="Enabled metrics HTTP middleware" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.http type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.543984295Z" level=info msg="HTTP server listening on TCP address: :3500" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.http type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544017642Z" level=info msg="HTTP server is running on port 3500" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544023289Z" level=info msg="The request body size parameter is: 4" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544041727Z" level=info msg="gRPC server listening on TCP address: :48181" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.internal type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544051155Z" level=info msg="Enabled gRPC tracing middleware" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.internal type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544060032Z" level=info msg="Enabled gRPC metrics middleware" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.grpc.internal type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544134528Z" level=info msg="Internal gRPC server is running on port 48181" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544182723Z" level=info msg="application protocol: grpc. waiting on port 51051.  This will block until the app is listening on that port." app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544280557Z" level=info msg="application discovered on port 51051" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544303393Z" level=info msg="actors: state store is not configured - this is okay for clients but services with hosted actors will fail to initialize!" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544357962Z" level=info msg="Actor runtime started. Actor idle timeout: 1h0m0s. Actor scan interval: 30s" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.actor type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544383573Z" level=info msg="Configuring workflow engine with actors backend" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.wfengine type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544409103Z" level=info msg="Registering component for dapr workflow engine..." app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.544423732Z" level=info msg="Initializing Dapr workflow component" app_id=moris-cron-sample component="dapr (workflow.dapr/v1)" instance=44e7173f93fd scope=dapr.contrib type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.546401122Z" level=info msg="app has not subscribed to binding h2-binding." app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.processor.binding type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:00.546430531Z" level=info msg="dapr initialized. Status: Running. Init Elapsed 4ms" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime type=log ver=1.12.5
+cron-issue-sample-1  | 2024-06-20T07:57:01.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:02.001Z	INFO	main/main.go:82	h1 handler was invoked
+placement-1          | time="2024-06-20T07:57:02.846521674Z" level=debug msg="heartbeat timeout reached, starting election,last-leader-addr=,last-leader-id=" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.84656873Z" level=debug msg="entering candidate state,node=Node at 127.0.0.1:8201 [Candidate],term=2" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846579133Z" level=debug msg="voting for self,term=2,id=" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846598624Z" level=debug msg="calculated votes needed,needed=1,term=2" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846606456Z" level=debug msg="vote granted,from=,term=2,tally=1" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846610703Z" level=debug msg="election won,term=2,tally=1" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846616131Z" level=debug msg="entering leader state,leader=Node at 127.0.0.1:8201 [Leader]" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846649147Z" level=info msg="Cluster leadership acquired" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846702513Z" level=info msg="leader is established." instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:02.846710358Z" level=info msg="Baseline membership heartbeat timestamp: 1718870222846709001" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+cron-issue-sample-1  | 2024-06-20T07:57:03.001Z	INFO	main/main.go:82	h1 handler was invoked
+placement-1          | time="2024-06-20T07:57:03.507552099Z" level=debug msg="PlacementTable Size, Hosts: 0, SortedSet: 0, LoadMap: 0" instance=defc20ee8333 scope=dapr.placement.raft type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:03.507820711Z" level=debug msg="performTablesUpdate succeed in 203.861µs" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+placement-1          | time="2024-06-20T07:57:03.507842625Z" level=debug msg="Stream connection is established from 172.18.0.2:48181" instance=defc20ee8333 scope=dapr.placement type=log ver=1.12.5
+daprd-1              | time="2024-06-20T07:57:03.508232244Z" level=info msg="Placement tables updated, version: 0" app_id=moris-cron-sample instance=44e7173f93fd scope=dapr.runtime.actors.placement type=log ver=1.12.5
+cron-issue-sample-1  | 2024-06-20T07:57:04.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:05.002Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:06.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:07.000Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:08.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:09.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:10.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:11.001Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:12.000Z	INFO	main/main.go:82	h1 handler was invoked
+cron-issue-sample-1  | 2024-06-20T07:57:13.001Z	INFO	main/main.go:82	h1 handler was invoked
+Gracefully stopping... (press Ctrl+C again to force)
+ Container dapr-cron-issue-daprd-1  Stopping
+ Container dapr-cron-issue-placement-1  Stopping
+ Container dapr-cron-issue-daprd-1  Stopped
+ Container dapr-cron-issue-cron-issue-sample-1  Stopping
+ Container dapr-cron-issue-placement-1  Stopped
+ Container dapr-cron-issue-cron-issue-sample-1  Stopped
+canceled
+make: *** [Makefile:6: up] Error 130
