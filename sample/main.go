@@ -85,6 +85,6 @@ func h1(ctx context.Context, in *common.BindingEvent) (out []byte, err error) {
 
 // h2 is a handler for the billing-observe-receiving binding
 func h2(ctx context.Context, in *common.BindingEvent) (out []byte, err error) {
-	log.Info("h1 handler was invoked")
+	log.Info("h2 handler was invoked")
 	return nil, nil
 }
