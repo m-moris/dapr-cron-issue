@@ -38,7 +38,7 @@ func main() {
 	// Add binding  handlers
 	for k, v := range map[string]common.BindingInvocationHandler{
 		"h1-binding": h1,
-		"h2-biding":  h2,
+		"h2-binding": h2,
 	} {
 		log.Info("add cron binding handler", zap.String("name", k))
 		if err := s.AddBindingInvocationHandler(k, v); err != nil {
