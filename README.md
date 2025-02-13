@@ -1,5 +1,9 @@
 # dapr cron issue
 
+Here is the repository with reproducible code for the following issue.
+
+- https://github.com/dapr/dapr/issues/7828
+
 This repository is for reproducing an issue where the cron binding does not work properly in Container Apps' dapr.
 This issue is reproduced in the local environment, but of course it is also reproduced in the Container App Environment.
 
